@@ -27,7 +27,9 @@ export const Detail = () => {
 
   return (
     <div className="min-h-full">
-      <h2 className="text-3xl text-center mb-8">PRODUCT DETAIL</h2>
+      <h2 className="text-5xl font-bold my-5 text-center mb-8">
+        PRODUCT DETAIL
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="bg-white p-4 rounded-xl shadow-sm">
           <img
