@@ -1,35 +1,30 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
-import { products } from '../products'
-import { useState,useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import {addToCart }from '../stores/cart'
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { products } from "../products";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../stores/cart";
+
 export const Detail = () => {
-    const {slug} = useParams();
-    const [detail,setDetail] = useState([]);
-    const [quantity,setQuantity] = useState(1);
-    const dispatch = useDispatch();
-    useEffect(()=>{
-        const findDetail = products.filter(product => product.slug === slug)
-        if(findDetail.length > 0){
-            setDetail(findDetail[0]);
-        }
-        else{
-            window.location.href='/'
-        }
-    },[slug])
-    const  handleMinusQuantity =()=>{
-      setQuantity(quantity - 1 < 1 ? 1 : quantity -1)
+  const { slug } = useParams();
+  const [detail, setDetail] = useState([]);
+  const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const findDetail = products.find((product) => product.slug === slug);
+    if (findDetail) {
+      setDetail(findDetail);
+    } else {
+      window.location.href = "/";
     }
-    const handlePlusQuantity = () =>{
-      setQuantity(quantity+1)
-    }
-    const handleAddtoCart = () =>{
-      dispatch(addToCart({
-        productId : detail.id,
-        quantity: quantity
-      }))
-    }
+  }, [slug]);
+
+  const handleMinusQuantity = () =>
+    setQuantity((prev) => Math.max(prev - 1, 1));
+  const handlePlusQuantity = () => setQuantity((prev) => prev + 1);
+  const handleAddToCart = () =>
+    dispatch(addToCart({ productId: detail.id, quantity }));
+
   return (
     <div className="min-h-full">
       <h2 className="text-3xl text-center mb-8">PRODUCT DETAIL</h2>
@@ -38,7 +33,7 @@ export const Detail = () => {
           <img
             src={detail.image}
             alt={detail.name}
-            className="w-140 h-140 rounded-lg"
+            className="w-140 h-130 rounded-lg"
           />
         </div>
         <div className="flex flex-col gap-6">
@@ -62,8 +57,14 @@ export const Detail = () => {
                 +
               </button>
             </div>
-            <button className="bg-slate-900 text-white px-7 py-3 rounded-xl shadow-2xl hover:bg-slate-800 transition-colors" onClick={handleAddtoCart}>
+            <button
+              className="bg-slate-900 text-white px-7 py-3 rounded-xl shadow-2xl hover:bg-slate-800 transition-colors"
+              onClick={handleAddToCart}
+            >
               Add To Cart
+            </button>
+            <button className="bg-slate-900 text-white px-7 py-3 rounded-xl shadow-2xl hover:bg-slate-800 transition-colors">
+              Buy Now
             </button>
           </div>
           <div className="bg-white p-6 rounded-xl shadow-sm">
@@ -74,4 +75,6 @@ export const Detail = () => {
       </div>
     </div>
   );
-}
+};
+
+
