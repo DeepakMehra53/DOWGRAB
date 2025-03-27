@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { products } from "../products";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../stores/cart";
 
 export const Detail = () => {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const [detail, setDetail] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
@@ -24,6 +25,11 @@ export const Detail = () => {
   const handlePlusQuantity = () => setQuantity((prev) => prev + 1);
   const handleAddToCart = () =>
     dispatch(addToCart({ productId: detail.id, quantity }));
+  
+  const handleBuyNow = () => {
+    dispatch(addToCart({ productId: detail.id, quantity }));
+    navigate('/checkout');
+  };
 
   return (
     <div className="min-h-full">
@@ -63,7 +69,10 @@ export const Detail = () => {
             >
               Add To Carts
             </button>
-            <button className="bg-slate-900 text-white px-7 py-3 rounded-xl shadow-2xl hover:bg-slate-800 transition-colors">
+            <button
+              className="bg-slate-900 text-white px-7 py-3 rounded-xl shadow-2xl hover:bg-slate-800 transition-colors"
+              onClick={handleBuyNow}
+            >
               Buy Now
             </button>
           </div>
