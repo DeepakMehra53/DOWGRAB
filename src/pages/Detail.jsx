@@ -5,6 +5,7 @@ import { useState,useEffect } from 'react'
 export const Detail = () => {
     const {slug} = useParams();
     const [detail,setDetail] = useState([]);
+    const [quantity,setQuantity] = useState(1);
     useEffect(()=>{
         const findDetail = products.filter(product => product.slug === slug)
         if(findDetail.length > 0){
@@ -14,6 +15,12 @@ export const Detail = () => {
             window.location.href='/'
         }
     },[slug])
+    const  handleMinusQuantity =()=>{
+      setQuantity(quantity - 1 < 1 ? 1 : quantity -1)
+    }
+    const handlePlusQuantity = () =>{
+      setQuantity(quantity+1)
+    }
   return (
     <div className="min-h-full">
       <h2 className="text-3xl text-center mb-8">PRODUCT DETAIL</h2>
@@ -32,24 +39,21 @@ export const Detail = () => {
             <div className="flex gap-2 justify-center items-center">
               <button
                 className="bg-gray-100 h-full w-10 font-bold text-xl rounded-xl flex justify-center items-center hover:bg-gray-200 transition-colors"
-                
+                onClick={handleMinusQuantity}
               >
                 -
               </button>
               <span className="bg-gray-200 h-full w-10 font-bold text-xl rounded-xl flex justify-center items-center">
-               0
+                {quantity}
               </span>
               <button
                 className="bg-gray-100 h-full w-10 font-bold text-xl rounded-xl flex justify-center items-center hover:bg-gray-200 transition-colors"
-                
+                onClick={handlePlusQuantity}
               >
                 +
               </button>
             </div>
-            <button
-              className="bg-slate-900 text-white px-7 py-3 rounded-xl shadow-2xl hover:bg-slate-800 transition-colors"
-             
-            >
+            <button className="bg-slate-900 text-white px-7 py-3 rounded-xl shadow-2xl hover:bg-slate-800 transition-colors" onClick={handleAddtoCart}>
               Add To Cart
             </button>
           </div>
