@@ -2,10 +2,13 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { products } from '../products'
 import { useState,useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import {addToCart }from '../stores/cart'
 export const Detail = () => {
     const {slug} = useParams();
     const [detail,setDetail] = useState([]);
     const [quantity,setQuantity] = useState(1);
+    const dispatch = useDispatch();
     useEffect(()=>{
         const findDetail = products.filter(product => product.slug === slug)
         if(findDetail.length > 0){
@@ -20,6 +23,12 @@ export const Detail = () => {
     }
     const handlePlusQuantity = () =>{
       setQuantity(quantity+1)
+    }
+    const handleAddtoCart = () =>{
+      dispatch(addToCart({
+        productId : detail.id,
+        quantity: quantity
+      }))
     }
   return (
     <div className="min-h-full">
