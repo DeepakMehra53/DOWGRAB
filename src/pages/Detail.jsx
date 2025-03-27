@@ -27,15 +27,13 @@ export const Detail = () => {
 
   return (
     <div className="min-h-full">
-      <h2 className="text-5xl font-bold my-5 text-center mb-8">
-        PRODUCT DETAIL
-      </h2>
+      <h2 className="text-3xl text-center mb-8">PRODUCT DETAIL</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="bg-white p-4 rounded-xl shadow-sm">
           <img
             src={detail.image}
             alt={detail.name}
-            className="w-140 h-130 rounded-lg"
+            className="w-140 h-125 rounded-lg"
           />
         </div>
         <div className="flex flex-col gap-6">
@@ -63,7 +61,7 @@ export const Detail = () => {
               className="bg-slate-900 text-white px-7 py-3 rounded-xl shadow-2xl hover:bg-slate-800 transition-colors"
               onClick={handleAddToCart}
             >
-              Add To Cart
+              Add To Carts
             </button>
             <button className="bg-slate-900 text-white px-7 py-3 rounded-xl shadow-2xl hover:bg-slate-800 transition-colors">
               Buy Now
