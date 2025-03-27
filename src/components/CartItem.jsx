@@ -2,6 +2,7 @@ import React from 'react'
 import { useState,useEffect } from 'react';
 import {products} from '../products'
 import { useDispatch } from 'react-redux';
+import { changeQuantity } from "../stores/cart";
 export const CartItem = (props) => {
     const {productId,quantity} = props.data;
     const [detail,setDetail] = useState([])

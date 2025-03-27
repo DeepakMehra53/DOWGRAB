@@ -41,7 +41,7 @@ export const products = [
         price: 101,
         image: imageProduct4,
         description: "L",
-        slug: "blue-plaid-dog-bandana "
+        slug: "blue-plaid-dog-bandana"
 
     },
     {
