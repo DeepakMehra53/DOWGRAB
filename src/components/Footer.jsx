@@ -6,7 +6,7 @@ export const Footer = () => {
     <footer className="bg-gray-800 text-white mt-10">
       <div className="w-[1200px] max-w-full mx-auto px-5 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          
+          {/* adw */}
           <div>
             <h3 className="text-xl font-semibold mb-4">Home.</h3>
             <p className="text-gray-300">
