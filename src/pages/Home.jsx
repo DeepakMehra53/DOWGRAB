@@ -3,6 +3,7 @@ import { products } from '../products';
 import { ProductCart } from '../components/ProductCart';
 import {HeroBackGround} from '../components/HeroBackGround'
 import { SecondPageBG } from '../components/SecondPageBG';
+import { Testimonials } from '../components/Testimonials';
 
 export const Home = () => {
   return (
@@ -17,6 +18,7 @@ export const Home = () => {
             )}
         </div>
       </div>
+      <Testimonials/>
     </>
   );
 }

@@ -46,16 +46,17 @@ export const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>Email: support@home.com</li>
-              <li>Phone: (555) 123-4567</li>
-              <li>Address: 123 Shopping Street</li>
+              <li>Email: support@dowgrab.com</li>
+              <li>Phone: 207-729-6682</li>
+              <li>Address: 3249 Fantages Way</li>
+              <li>Brunswick , ME 04011</li>
             </ul>
           </div>
         </div>
 
        
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-          <p>&copy; {new Date().getFullYear()} Home. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} DowGrab. All rights reserved.</p>
         </div>
       </div>
     </footer>
