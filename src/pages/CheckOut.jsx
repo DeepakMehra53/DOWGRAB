@@ -3,90 +3,90 @@ import React from "react";
 export const CheckOut = () => {
   return (
     <>
-      <section class="py-5">
-        <div class="container">
-          <h1 class="mb-4">Checkout</h1>
+      <section className="py-5">
+        <div className="container">
+          <h1 className="mb-4">Checkout</h1>
 
-          <div class="row">
-            <div class="col-lg-8">
-              <div class="card mb-4">
-                <div class="card-body">
-                  <h5 class="card-title mb-4">Shipping Information</h5>
+          <div className="row">
+            <div className="col-lg-8">
+              <div className="card mb-4">
+                <div className="card-body">
+                  <h5 className="card-title mb-4">Shipping Information</h5>
                   <form id="checkoutForm">
-                    <div class="row">
-                      <div class="col-md-6 mb-3">
-                        <label for="firstName" class="form-label">
+                    <div className="row">
+                      <div className="col-md-6 mb-3">
+                        <label for="firstName" className="form-label">
                           First Name
                         </label>
                         <input
                           type="text"
-                          class="form-control"
+                          className="form-control"
                           id="firstName"
                         />
                       </div>
-                      <div class="col-md-6 mb-3">
-                        <label for="lastName" class="form-label">
+                      <div className="col-md-6 mb-3">
+                        <label for="lastName" className="form-label">
                           Last Name
                         </label>
-                        <input type="text" class="form-control" id="lastName" />
+                        <input type="text" className="form-control" id="lastName" />
                       </div>
                     </div>
 
-                    <div class="mb-3">
-                      <label for="email" class="form-label">
+                    <div className="mb-3">
+                      <label for="email" className="form-label">
                         Email
                       </label>
-                      <input type="email" class="form-control" id="email" />
+                      <input type="email" className="form-control" id="email" />
                     </div>
 
-                    <div class="mb-3">
-                      <label for="address" class="form-label">
+                    <div className="mb-3">
+                      <label for="address" className="form-label">
                         Address
                       </label>
-                      <input type="text" class="form-control" id="address" />
+                      <input type="text" className="form-control" id="address" />
                     </div>
 
-                    <div class="row">
-                      <div class="col-md-6 mb-3">
-                        <label for="city" class="form-label">
+                    <div className="row">
+                      <div className="col-md-6 mb-3">
+                        <label for="city" className="form-label">
                           City
                         </label>
-                        <input type="text" class="form-control" id="city" />
+                        <input type="text" className="form-control" id="city" />
                       </div>
-                      <div class="col-md-3 mb-3">
-                        <label for="state" class="form-label">
+                      <div className="col-md-3 mb-3">
+                        <label for="state" className="form-label">
                           State
                         </label>
-                        <input type="text" class="form-control" id="state" />
+                        <input type="text" className="form-control" id="state" />
                       </div>
-                      <div class="col-md-3 mb-3">
-                        <label for="zip" class="form-label">
+                      <div className="col-md-3 mb-3">
+                        <label for="zip" className="form-label">
                           ZIP Code
                         </label>
-                        <input type="text" class="form-control" id="zip" />
+                        <input type="text" className="form-control" id="zip" />
                       </div>
                     </div>
 
-                    <h5 class="mt-4 mb-4">Payment Information</h5>
+                    <h5 className="mt-4 mb-4">Payment Information</h5>
 
-                    <div class="mb-3">
+                    <div className="mb-3">
                       <h6>Payment Method</h6>
 
-                      <div class="form-check">
+                      <div className="form-check">
                         <input
-                          class="form-check-input"
+                          className="form-check-input"
                           type="radio"
                           name="paymentMethod"
                           id="cashOnDelivery"
                           value="cashOnDelivery"
                         />
-                        <label class="form-check-label" for="cashOnDelivery">
+                        <label className="form-check-label" for="cashOnDelivery">
                           Cash on Delivery
                         </label>
                       </div>
                     </div>
 
-                    <a href="thankyou.html" class="btn btn-primary w-100 mt-4">
+                    <a href="thankyou.html" className="btn btn-primary w-100 mt-4">
                       Place Order
                     </a>
                   </form>
@@ -94,24 +94,24 @@ export const CheckOut = () => {
               </div>
             </div>
 
-            <div class="col-lg-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title mb-4">Order Summary</h5>
+            <div className="col-lg-4">
+              <div className="card">
+                <div className="card-body">
+                  <h5 className="card-title mb-4">Order Summary</h5>
                   <div id="orderSummary"></div>=
-                  <div class="d-flex justify-content-between mb-2">
+                  <div className="d-flex justify-content-between mb-2">
                     <span>Subtotal</span>
                     <span id="subtotal">$0.00</span>
                   </div>
-                  <div class="d-flex justify-content-between mb-2">
+                  <div className="d-flex justify-content-between mb-2">
                     <span>Shipping</span>
                     <span id="shipping">$0.00</span>
                   </div>
-                  <div class="d-flex justify-content-between mb-2">
+                  <div className="d-flex justify-content-between mb-2">
                     <span>Tax</span>
                     <span id="tax">$0.00</span>
                   </div>
-                  <div class="d-flex justify-content-between mb-2 fw-bold">
+                  <div className="d-flex justify-content-between mb-2 fw-bold">
                     <span>Total</span>
                     <span id="total">$0.00</span>
                   </div>
