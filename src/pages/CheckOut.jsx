@@ -13,7 +13,7 @@ export const CheckOut = () => {
   return (
     <>
       <div className="flex-1 bg-white p-8">
-        <h1 className="text-2xl font-medium mb-8">Complete your order</h1>
+        <h1 className="text-5xl text-center font-medium mb-8">Complete your order</h1>
 
         <div className="space-y-8">
           {/* Personal Details */}

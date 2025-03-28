@@ -8,6 +8,7 @@ import { Privacy } from './pages/privacy'
 import { Term } from './pages/Term'
 import { CheckOut } from './pages/CheckOut'
 import { ThankYou } from './pages/ThankYou'
+import { Contact } from './pages/Contact'
 function App() {
  return (
    <BrowserRouter>
@@ -19,6 +20,7 @@ function App() {
          <Route path="/terms" element={<Term />} />
          <Route path="/checkout" element={<CheckOut/>} />
          <Route path="/thankyou" element={<ThankYou/>} />
+         <Route path="/contact" element={<Contact/>} />
        </Route>
      </Routes>
    </BrowserRouter>
